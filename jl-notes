@@ -1,0 +1,47 @@
+1. Download csv transactions
+
+2. Convert second line to this date format:"Statement Date","01 January 2019"
+
+3. source activate ofxjl
+
+4. cd /media/xubi/forext41/miniconda3/envs/ofxjl/
+
+5. Paste the tgt csv here
+
+6. ofxstatement convert -t jlcard  src.csv tgt.ofx
+	eg:ofxstatement convert -t jlcard  jl-13sep18-28-jan19.csv jl-13sep18-28-jan19-3.ofx
+
+7. Change the top header of the tgt ofx
+
+From:			
+
+<!-- 
+OFXHEADER:100
+DATA:OFXSGML
+VERSION:102
+SECURITY:NONE
+ENCODING:UTF-8
+CHARSET:NONE
+COMPRESSION:NONE
+OLDFILEUID:NONE
+NEWFILEUID:NONE
+-->				
+
+To: Rremove <!-- and -->
+
+OFXHEADER:100
+DATA:OFXSGML
+VERSION:102
+SECURITY:NONE
+ENCODING:UTF-8
+CHARSET:NONE
+COMPRESSION:NONE
+OLDFILEUID:NONE
+NEWFILEUID:NONE
+
+OR
+
+Line:1	<?xml version="1.0"?>
+Line:2	<?OFX OFXHEADER="200" VERSION="200" SECURITY="NONE" OLDFILEUID="NONE" NEWFILEUID="NONE"?>
+Line:3 starts as
+	<OFX><SIGNONMSGSRSV1><SONRS><STATUS><CODE>0</CODE>......
