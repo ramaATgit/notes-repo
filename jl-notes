@@ -1,6 +1,6 @@
 1. Download csv transactions
 
-2. Convert second line to this date format:"Statement Date","01 January 2019"
+2. Convert second line to this date format:"Statement Date","01 January 2019" and Remove ,"End","2019-04-27"
 
 3. source activate ofxjl
 
